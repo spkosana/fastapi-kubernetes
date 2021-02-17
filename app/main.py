@@ -6,4 +6,4 @@ app = FastAPI(title="Async FastAPI")
 
 @app.get('/')
 def home():
-    return {"note": "Surya Prakash Kosana testing python fastapi ci cd"}
+    return {"note": "Surya Kosana testing python fastapi ci cd"}
