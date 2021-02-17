@@ -1,0 +1,25 @@
+name: docker ci build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  fastapi-ci-build:
+    runs-on: ubuntu-latest
+    steps:
+    # This command 
+      - uses: actions/checkout@v2  
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: docker build fastapi
+        run: |
+          docker build -t spkosana/fastapi:v1 .
+      - name: docker push
+        run: |
+          docker push spkosana/fastapi:v1
