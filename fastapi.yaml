@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+  labels:
+    app: pyapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyapp
+  template:
+    metadata:
+      labels:
+        app: pyapp
+    spec:
+      containers:
+      - name: pyapp
+        image: spkosana/fastapi:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+spec:
+  selector:
+    app: pyapp
+  ports:
+  - protocol: "TCP"
+    port: 6080
+    targetPort: 8000
+    nodePort: 31000
+  type: LoadBalancer
