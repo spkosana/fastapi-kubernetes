@@ -11,7 +11,7 @@ jobs:
     steps:
     # This command 
       - uses: actions/checkout@v2
-        name: test 
+      - name: test 
         run: echo test
       # - name: docker login
       #   env:
