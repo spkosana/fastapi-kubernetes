@@ -23,5 +23,7 @@ jobs:
       - name: docker push
         run: |
           docker push spkosana/fastapi:v1
-      - name: check if kubectl exists
-        run: kubectl get nodes
+      - name: install arkade
+        run: curl -sLS https://dl.get-arkade.dev | sudo sh
+      - name: check arkade installation
+        run: arkade version
