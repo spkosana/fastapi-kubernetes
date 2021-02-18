@@ -23,3 +23,5 @@ jobs:
       - name: docker push
         run: |
           docker push spkosana/fastapi:v1
+      - name: check if kubectl exists
+        run: kubectl get nodes
