@@ -11,19 +11,23 @@ jobs:
     steps:
     # This command 
       - uses: actions/checkout@v2  
-      - name: docker login
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}   
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: docker build fastapi
-        run: |
-          docker build -t spkosana/fastapi:v1 .
-      - name: docker push
-        run: |
-          docker push spkosana/fastapi:v1
+      # - name: docker login
+      #   env:
+      #     DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+      #     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      #   run: |
+      #     docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      # - name: docker build fastapi
+      #   run: |
+      #     docker build -t spkosana/fastapi:v1 .
+      # - name: docker push
+      #   run: |
+      #     docker push spkosana/fastapi:v1
       - name: install arkade
         run: curl -sLS https://dl.get-arkade.dev | sudo sh
       - name: check arkade installation
         run: arkade version
+      - name: install kubectl using arkade
+        run: arkade get kubectl
+      - name: install kubectl using arkade
+        run: arkade get kind
