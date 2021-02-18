@@ -28,6 +28,10 @@ jobs:
       - name: check arkade installation
         run: arkade version
       - name: install kubectl using arkade
-        run: arkade get kubectl
-      - name: install kubectl using arkade
-        run: arkade get kind
+        run: | 
+          arkade get kubectl
+          kubectl version
+      - name: install kind using arkade
+        run: |
+          arkade get kind
+          kind version
