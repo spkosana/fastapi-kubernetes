@@ -44,10 +44,9 @@ jobs:
           kubectl apply -f fastapi.yaml
           sleep 1m 
           kubectl get all
-          curl 0.0.0.0:31000
-      # - name: list fastapi yaml file
-      #   run: |
-      #     web-start.sh
-      #     kubectl get all
+      - name: start fastapi yaml file
+        run: |
+          web-start.sh
+          kubectl get all
 
       
