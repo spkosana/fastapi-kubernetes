@@ -37,9 +37,12 @@ jobs:
           kind version
       - name: create kind Cluster
         run: |
-          kind create cluster --name fastapi --config kind-cluster.yml --wait 1m
+          kind create cluster --name fastapi --config kind-cluster.yml --wait 2m
           kubectl get nodes
+          kubectl cluster-info --context kind-fastapi
       - name: list fastapi yaml file
         run: |
-          ls -al
+          web-start.sh
+          kubectl get all
+
       
