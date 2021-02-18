@@ -41,6 +41,10 @@ jobs:
           kubectl get nodes
           kubectl get all
           kubectl create namespace fastapi
+          kubectl apply -f fastapi.yaml
+          sleep 1m 
+          kubectl get all
+          curl localhost:31000
       # - name: list fastapi yaml file
       #   run: |
       #     web-start.sh
