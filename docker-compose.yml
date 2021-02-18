@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  k8-web:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 5080:8000
+
