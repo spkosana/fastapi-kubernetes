@@ -1,0 +1,1 @@
+kubectl apply -f fastapi.yaml ; kubectl get all
