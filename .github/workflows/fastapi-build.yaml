@@ -30,19 +30,21 @@ jobs:
       - name: install kubectl using arkade
         run: | 
           arkade get kubectl
-          kubectl version
-      - name: install kind using arkade
-        run: |
           arkade get kind
+          arkade get kubectx
+          arkade get kubens
+          kubectl version
           kind version
+          kubectx version
+          kubens version
       - name: create kind Cluster
         run: |
-          kind create cluster --name fastapi --config kind-cluster.yml --wait 2m
+          kind create cluster --name fastapi --config kind-cluster.yml --wait 3m
           kubectl cluster-info --context kind-fastapi
           kubectl get nodes
-          sleep 1m
-          kubectl get nodes
           kubectl get all
+          kubectx
+          kubens
       # - name: list fastapi yaml file
       #   run: |
       #     web-start.sh
