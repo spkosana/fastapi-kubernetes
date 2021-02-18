@@ -40,6 +40,7 @@ jobs:
           sleep 2m
           kubectl get nodes
           kubectl get all
+          kubectl create namespace fastapi
       # - name: list fastapi yaml file
       #   run: |
       #     web-start.sh
