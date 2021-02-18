@@ -37,5 +37,5 @@ jobs:
           kind version
       - name: create kind Cluster
         run: |
-          kind create --name=fastapi --config=kind-cluster.yml
+          kind create --name fastapi --config kind-cluster.yml
           kubectl get nodes
