@@ -7,10 +7,11 @@ on:
 
 jobs: 
   fastapi-ci-build:
+    name: building on ubuntu latest
     runs-on: ubuntu-latest
     steps:
-    # This command 
-      - uses: actions/checkout@v2
+      - name: using actions checkout version 2
+        uses: actions/checkout@v2
       - name: test 
         run: echo test
       # - name: docker login

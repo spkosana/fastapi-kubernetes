@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: pyapp
-        image: spkosana/fastapi:v1
+        image: spkosana/fastapi:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000  

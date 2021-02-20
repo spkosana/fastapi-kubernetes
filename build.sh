@@ -1,0 +1,1 @@
+docker build -t spkosana/fastapi:1.0 .; docker push spkosana/fastapi:1.0; kubectl delete -f fastapi.yaml ; kubectl apply -f fastapi.yaml
