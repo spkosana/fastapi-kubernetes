@@ -22,7 +22,7 @@ def get_profile_info():
 
 
 @app.get('/{id}')
-def get_id_name(id: str) -> str:
+def get_id_name(id: str) -> dict:
     names_dict = {
         "1": "Surya",
         "2": "Prakash",
@@ -30,4 +30,4 @@ def get_id_name(id: str) -> str:
         "4": "Kosana",
         "5": "Surya Prakash Reddy Kosana"
     }
-    return names_dict[id]
+    return {id: names_dict.get(id, f"Given {id} is not available in the names dictionary")}
