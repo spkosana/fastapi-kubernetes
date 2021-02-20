@@ -22,7 +22,6 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: docker build fastapi
         run: |
-          docker version -f '{{.Server.Experimental}}'
           DOCKER_BUILDKIT=1 docker build -t spkosana/fastapi:1.0 .
       - name: docker push
         run: |
