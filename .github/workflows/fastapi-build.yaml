@@ -26,26 +26,3 @@ jobs:
       - name: docker push
         run: |
           docker push spkosana/fastapi:1.0
-      # - name: install arkade
-      #   run: curl -sLS https://dl.get-arkade.dev | sudo sh
-      # - name: check arkade installation
-      #   run: arkade version
-      # - name: install kubectl using arkade
-      #   run: | 
-      #     arkade get kubectl
-      #     kubectl version
-      #     arkade get kind
-      #     kind version
-      # - name: create kind Cluster
-      #   run: |
-      #     kind create cluster --name fastapi --config kind-cluster.yml --wait 2m
-      #     kubectl cluster-info --context kind-fastapi
-      #     sleep 2m
-      #     kubectl get nodes
-      #     kubectl get all
-      #     kubectl create namespace fastapi
-      #     kubectl apply -f fastapi.yaml
-      #     sleep 1m 
-      #     kubectl get all
-
-      
