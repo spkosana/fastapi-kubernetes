@@ -19,3 +19,15 @@ def get_profile_info():
         "address": faker.address()
     }
     return profile_dict
+
+
+@app.get('/{id}')
+def get_id_name(id: str) -> str:
+    names_dict = {
+        "1": "Surya",
+        "2": "Prakash",
+        "3": "Reddy",
+        "4": "Kosana",
+        "5": "Surya Prakash Reddy Kosana"
+    }
+    return names_dict[id]
